@@ -12,10 +12,12 @@ phases:
        - echo 0000000
        - git branch -a --contains HEAD
        - echo 1111111
+       - GIT_BRANCH_NAME=$(git branch -a --contains HEAD | sed -n 2p  | awk '{ printf $1 }')
+       - echo 2222222
 
   build:
     commands:
-       - echo 222222
+       - echo 9999999
 
 artifacts:
   files:
