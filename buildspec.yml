@@ -5,7 +5,7 @@ phases:
     commands:
       - printenv
       - cat .git/config
-      - git checkout ${CODEBUILD_SOURCE_VERSION}
+      - git log --oneline
 
   pre_build:
     commands:
