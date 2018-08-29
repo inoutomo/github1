@@ -4,6 +4,7 @@ phases:
   install:
     commands:
       - printenv
+      - cat .git/config
 
   pre_build:
     commands:
