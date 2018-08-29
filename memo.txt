@@ -1,0 +1,6 @@
+
+
+git add .; git commit -m "test"; git push
+git add .; git commit -m "test"; git push; aws codebuild start-build --project-name github1
+
+
