@@ -3,5 +3,5 @@
 git add .; git commit -m "test"; git push
 git add .; git commit -m "test"; git push; aws codebuild start-build --project-name github1
 
-aws codebuild start-build --project-name github1 --git-clone-depth-override
+aws codebuild start-build --project-name github1 --git-clone-depth-override 1
 
