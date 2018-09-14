@@ -5,7 +5,7 @@ phases:
     commands:
       - printenv
       - cat .git/config
-      - git log --oneline
+#      - git log --oneline
       - echo ${CODEBUILD_SOURCE_VERSION}
       - GIT_TAG_NAME=$(git tag -l --contains ${CODEBUILD_SOURCE_VERSION})
       - echo ${GIT_TAG_NAME}
