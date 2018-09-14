@@ -6,7 +6,7 @@ phases:
       - printenv
       - cat .git/config
       - git log --oneline
-      - echo "CODEBUILD_SOURCE_VERSION: ${CODEBUILD_SOURCE_VERSION}"
+      - echo ${CODEBUILD_SOURCE_VERSION}
       - git tag -l --contains ${CODEBUILD_SOURCE_VERSION}
 
   pre_build:
