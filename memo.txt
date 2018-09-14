@@ -8,7 +8,10 @@ aws codebuild start-build --project-name github1 --git-clone-depth-override 1
 
 aws codebuild update-webhook --project-name github1 --branch-filter testbr
 
-
+# shallow clone
 aws codebuild update-project --name github1 --source type=GITHUB,location="https://github.com/inoutomo/github1.git",gitCloneDepth=1,auth={type=OAUTH},reportBuildStatus=false,insecureSsl=false
+
+# full clone
+aws codebuild update-project --name github1 --source type=GITHUB,location="https://github.com/inoutomo/github1.git",gitCloneDepth=0,auth={type=OAUTH},reportBuildStatus=false,insecureSsl=false
 
 
