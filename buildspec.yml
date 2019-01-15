@@ -4,30 +4,35 @@ phases:
   install:
     commands:
       - printenv
-      - cat .git/config
-# Need full clone to run "git log"
-      - git log --oneline
-      - echo ${CODEBUILD_SOURCE_VERSION}
-# Need full clone to run "git tag"
-      - GIT_TAG_NAME=$(git tag -l --contains ${CODEBUILD_SOURCE_VERSION})
-      - echo ${GIT_TAG_NAME}
-
+#      - cat .git/config
+##########################
+## Need full clone to run "git log"
+#      - git log --oneline
+#      - echo ${CODEBUILD_SOURCE_VERSION}
+## Need full clone to run "git tag"
+#      - GIT_TAG_NAME=$(git tag -l --contains ${CODEBUILD_SOURCE_VERSION})
+#      - echo ${GIT_TAG_NAME}
+##########################
+ 
   pre_build:
     commands:
        - echo 0000000
-# Need full clone to run "git branch"
-       - git branch -a --contains HEAD
-       - echo 1111111
-       - echo "Need full clone to get the branch name"
-       - GIT_BRANCH_NAME=$(git branch -a --contains HEAD | sed -n 2p  | awk '{ printf $1 }')
-       - echo $GIT_BRANCH_NAME
-       - echo 2222222
+##########################
+## Need full clone to run "git branch"
+#       - git branch -a --contains HEAD
+#       - echo 1111111
+#       - echo "Need full clone to get the branch name"
+#       - GIT_BRANCH_NAME=$(git branch -a --contains HEAD | sed -n 2p  | awk '{ printf $1 }')
+#       - echo $GIT_BRANCH_NAME
+#       - echo 2222222
+##########################
 
   build:
     commands:
        - echo 9999999
 
 artifacts:
+  name: borken_env_$(CODEBUILD_RESOLVED_SOURCE_VERSION)
   files:
     - '**/*'
 
