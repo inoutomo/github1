@@ -32,7 +32,8 @@ phases:
        - echo 9999999
 
 artifacts:
-  name: borken_env_$(CODEBUILD_RESOLVED_SOURCE_VERSION)
+#  name: borken_env_$(CODEBUILD_RESOLVED_SOURCE_VERSION)
+  name: myname-$(AWS_REGION)
   files:
     - '**/*'
 
