@@ -30,10 +30,11 @@ phases:
   build:
     commands:
        - echo 9999999
-
+       - echo $CODEBUILD_RESOLVED_SOURCE_VERSION
+       - echo $AWS_REGION
 artifacts:
-#  name: borken_env_$(CODEBUILD_RESOLVED_SOURCE_VERSION)
-  name: myname-$(AWS_REGION)
   files:
     - '**/*'
+  name: myname-$(AWS_REGION) 
+#  name: borken_env_$(CODEBUILD_RESOLVED_SOURCE_VERSION)
 
