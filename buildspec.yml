@@ -35,6 +35,5 @@ phases:
 artifacts:
   files:
     - '**/*'
-  name: myname2-$AWS_REGION
-#  name: borken_env_$(CODEBUILD_RESOLVED_SOURCE_VERSION)
+  name: guardrails-mysql_$(printf $CODEBUILD_WEBHOOK_TRIGGER | sed -e 's/\//-/')_$(printf '%.7s' $CODEBUILD_RESOLVED_SOURCE_VERSION)
 
