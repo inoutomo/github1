@@ -35,6 +35,6 @@ phases:
 artifacts:
   files:
     - '**/*'
-  name: myname-${AWS_REGION}
+  name: myname2-$AWS_REGION
 #  name: borken_env_$(CODEBUILD_RESOLVED_SOURCE_VERSION)
 
