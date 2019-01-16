@@ -36,5 +36,5 @@ artifacts:
   files:
     - '**/*'
 #  name: guardrails-mysql_$(printf $CODEBUILD_WEBHOOK_TRIGGER | sed -e s/\//-/)_$(printf '%.7s' $CODEBUILD_RESOLVED_SOURCE_VERSION)
-  name: guardrails-mysql_${CODEBUILD_WEBHOOK_TRIGGER////-}_${CODEBUILD_RESOLVED_SOURCE_VERSION:0:7}
+  name: 'guardrails-mysql_${CODEBUILD_WEBHOOK_TRIGGER////-}_${CODEBUILD_RESOLVED_SOURCE_VERSION:0:7}'
 
