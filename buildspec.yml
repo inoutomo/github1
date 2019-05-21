@@ -6,8 +6,8 @@ phases:
       - printenv
       - git tag
       - git describe
-      - ls -la
       - git show -s --format=%H
+      - ls -la
 #      - cat .git/config
 ##########################
 ## Need full clone to run "git log"
