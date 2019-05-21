@@ -4,6 +4,9 @@ phases:
   install:
     commands:
       - printenv
+      - git tag
+      - git describe
+      - git show -s --format=%H
 #      - cat .git/config
 ##########################
 ## Need full clone to run "git log"
